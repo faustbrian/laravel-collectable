@@ -1,24 +1,58 @@
 <?php
 
+/*
+ * This file is part of Laravel Collectable.
+ *
+ * (c) DraperStudio <hello@draperstudio.tech>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace DraperStudio\Collectable;
 
 use DraperStudio\Collectable\Models\Collection;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Builder.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 class Builder
 {
+    /**
+     * @var Model
+     */
     private $model;
 
+    /**
+     * @var
+     */
     private $collectionName;
 
+    /**
+     * @var
+     */
     private $itemType;
 
+    /**
+     * Builder constructor.
+     *
+     * @param Model $model
+     * @param $collectionName
+     */
     public function __construct(Model $model, $collectionName)
     {
         $this->model = $model;
         $this->collectionName = $collectionName;
     }
 
+    /**
+     * @param Model $model
+     *
+     * @return mixed
+     */
     public function push(Model $model)
     {
         if ($this->has($model)) {
@@ -34,36 +68,65 @@ class Builder
         );
     }
 
+    /**
+     * @param Model $model
+     *
+     * @return mixed
+     */
     public function has(Model $model)
     {
         return $this->buildQuery($model)->exists();
     }
 
+    /**
+     * @return mixed
+     */
     public function first()
     {
         return $this->buildQuery()->firstOrFail();
     }
 
+    /**
+     * @param Model $model
+     *
+     * @return mixed
+     */
     public function get(Model $model)
     {
         return $this->buildQuery($model)->firstOrFail();
     }
 
+    /**
+     * @return mixed
+     */
     public function all()
     {
         return $this->buildQuery()->get();
     }
 
+    /**
+     * @param Model $model
+     *
+     * @return bool
+     */
     public function forget(Model $model)
     {
         return (bool) $this->buildQuery($model)->delete();
     }
 
+    /**
+     * @return bool
+     */
     public function flush()
     {
         return (bool) $this->buildQuery()->delete();
     }
 
+    /**
+     * @param $value
+     *
+     * @return $this
+     */
     public function type($value)
     {
         $this->itemType = $value;
@@ -71,6 +134,11 @@ class Builder
         return $this;
     }
 
+    /**
+     * @param null $model
+     *
+     * @return mixed
+     */
     private function buildQuery($model = null)
     {
         $query = $this->model->collections();

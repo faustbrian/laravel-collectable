@@ -4,8 +4,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class CreateCollectionsTable.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
+ */
 class CreateCollectionsTable extends Migration
 {
+    /**
+     *
+     */
     public function up()
     {
         Schema::create('collections', function (Blueprint $table) {
@@ -21,6 +29,9 @@ class CreateCollectionsTable extends Migration
         });
     }
 
+    /**
+     *
+     */
     public function down()
     {
         Schema::drop('collections');
