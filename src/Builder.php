@@ -2,7 +2,6 @@
 
 namespace BrianFaust\Collectable;
 
-use BrianFaust\Collectable\Models\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class Builder

@@ -1,6 +1,6 @@
 <?php
 
-namespace BrianFaust\Collectable\Models;
+namespace BrianFaust\Collectable;
 
 use Illuminate\Database\Eloquent\Model;
 

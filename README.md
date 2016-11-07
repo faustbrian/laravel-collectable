@@ -31,12 +31,13 @@ php artisan vendor:publish --provider="BrianFaust\Collectable\ServiceProvider" &
 
 namespace App;
 
-use BrianFaust\Collectable\Traits\Collectable;
+use BrianFaust\Collectable\HasCollectionsTrait;
+use BrianFaust\Collectable\Interfaces\HasCollections;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class User extends Model implements HasCollections
 {
-    use HasCollections;
+    use HasCollectionsTrait;
 }
 ```
 

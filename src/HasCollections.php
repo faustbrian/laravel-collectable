@@ -3,7 +3,7 @@
 namespace BrianFaust\Collectable\Traits;
 
 use BrianFaust\Collectable\Builder;
-use BrianFaust\Collectable\Models\Collection;
+use BrianFaust\Collectable\Collection;
 
 trait HasCollections
 {

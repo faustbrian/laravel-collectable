@@ -2,7 +2,9 @@
 
 namespace BrianFaust\Collectable;
 
-class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
+use BrianFaust\ServiceProvider\ServiceProvider;
+
+class CollectableServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
