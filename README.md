@@ -12,13 +12,13 @@ And then include the service provider within `app/config/app.php`.
 
 ``` php
 'providers' => [
-    BrianFaust\Collectable\ServiceProvider::class
+    BrianFaust\Collectable\CollectableServiceProvider::class
 ];
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:
 ```
-php artisan vendor:publish --provider="BrianFaust\Collectable\ServiceProvider" && php artisan migrate
+php artisan vendor:publish --provider="BrianFaust\Collectable\CollectableServiceProvider" && php artisan migrate
 ```
 
 ## Usage
