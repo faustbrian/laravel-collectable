@@ -1,6 +1,6 @@
 <?php
 
-namespace BrianFaust\Collectable\Traits;
+namespace BrianFaust\Collectable;
 
 use BrianFaust\Collectable\Builder;
 use BrianFaust\Collectable\Collection;
