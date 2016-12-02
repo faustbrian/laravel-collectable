@@ -11,9 +11,7 @@ $ composer require faustbrian/laravel-collectable
 And then include the service provider within `app/config/app.php`.
 
 ``` php
-'providers' => [
-    BrianFaust\Collectable\CollectableServiceProvider::class
-];
+BrianFaust\Collectable\CollectableServiceProvider::class
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:
