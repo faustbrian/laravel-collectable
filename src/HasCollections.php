@@ -1,9 +1,15 @@
 <?php
 
-namespace BrianFaust\Collectable;
+/*
+ * This file is part of Laravel Collectable.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use BrianFaust\Collectable\Builder;
-use BrianFaust\Collectable\Collection;
+namespace BrianFaust\Collectable;
 
 trait HasCollections
 {
