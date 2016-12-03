@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Collectable;
 
 use BrianFaust\ServiceProvider\ServiceProvider;
@@ -18,7 +20,7 @@ class CollectableServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishMigrations();
     }
@@ -28,7 +30,7 @@ class CollectableServiceProvider extends ServiceProvider
      *
      * @return string
      */
-    public function getPackageName()
+    public function getPackageName(): string
     {
         return 'collectable';
     }
