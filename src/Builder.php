@@ -23,6 +23,7 @@ declare(strict_types=1);
 namespace BrianFaust\Collectable;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class Builder
 {
@@ -47,7 +48,7 @@ class Builder
      * @param Model $model
      * @param $collectionName
      */
-    public function __construct(Model $model, $collectionName)
+    public function __construct(Model $model, string $collectionName)
     {
         $this->model = $model;
         $this->collectionName = $collectionName;
@@ -58,13 +59,13 @@ class Builder
      *
      * @return mixed
      */
-    public function push(Model $model)
+    public function push(Model $model): bool
     {
         if ($this->has($model)) {
             return $this->get($model);
         }
 
-        return $this->model->collections()->save(
+        return (bool) $this->model->collections()->save(
             new Collection([
                 'item_id'         => $model->id,
                 'item_type'       => get_class($model),
@@ -78,7 +79,7 @@ class Builder
      *
      * @return mixed
      */
-    public function has(Model $model)
+    public function has(Model $model): bool
     {
         return $this->buildQuery($model)->exists();
     }
@@ -86,7 +87,7 @@ class Builder
     /**
      * @return mixed
      */
-    public function first()
+    public function first(): Model
     {
         return $this->buildQuery()->firstOrFail();
     }
@@ -96,7 +97,7 @@ class Builder
      *
      * @return mixed
      */
-    public function get(Model $model)
+    public function get(Model $model): Model
     {
         return $this->buildQuery($model)->firstOrFail();
     }
@@ -104,7 +105,7 @@ class Builder
     /**
      * @return mixed
      */
-    public function all()
+    public function all(): Collection
     {
         return $this->buildQuery()->get();
     }
@@ -114,7 +115,7 @@ class Builder
      *
      * @return bool
      */
-    public function forget(Model $model)
+    public function forget(Model $model): bool
     {
         return (bool) $this->buildQuery($model)->delete();
     }
@@ -122,7 +123,7 @@ class Builder
     /**
      * @return bool
      */
-    public function flush()
+    public function flush(): bool
     {
         return (bool) $this->buildQuery()->delete();
     }
@@ -132,7 +133,7 @@ class Builder
      *
      * @return $this
      */
-    public function type($value)
+    public function type($value): self
     {
         $this->itemType = $value;
 
@@ -144,7 +145,7 @@ class Builder
      *
      * @return mixed
      */
-    private function buildQuery($model = null)
+    private function buildQuery(Model $model = null)
     {
         $query = $this->model->collections();
 
