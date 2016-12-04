@@ -22,9 +22,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\Collectable;
 
-use BrianFaust\ServiceProvider\ServiceProvider;
+use BrianFaust\ServiceProvider\AbstractServiceProvider;
 
-class CollectableServiceProvider extends ServiceProvider
+class CollectableServiceProvider extends AbstractServiceProvider
 {
     /**
      * Bootstrap the application services.
