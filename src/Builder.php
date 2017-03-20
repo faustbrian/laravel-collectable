@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace BrianFaust\Collectable;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
 
 class Builder
 {
