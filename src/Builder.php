@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Collectable.
  *
@@ -58,8 +55,8 @@ class Builder
 
         return (bool) $this->model->collections()->save(
             new Collection([
-                'item_id'         => $model->id,
-                'item_type'       => get_class($model),
+                'item_id' => $model->id,
+                'item_type' => get_class($model),
                 'collection_name' => $this->collectionName,
             ])
         );

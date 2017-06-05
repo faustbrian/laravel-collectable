@@ -10,13 +10,8 @@ Require this package, with [Composer](https://getcomposer.org/), in the root dir
 $ composer require faustbrian/laravel-collectable
 ```
 
-And then include the service provider within `app/config/app.php`.
-
-``` php
-BrianFaust\Collectable\CollectableServiceProvider::class
-```
-
 To get started, you'll need to publish the vendor assets and migrate:
+
 ```
 php artisan vendor:publish --provider="BrianFaust\Collectable\CollectableServiceProvider" && php artisan migrate
 ```
@@ -88,19 +83,11 @@ $user->collection('favorites')->flush();
 $user->collection('favorites')->type(Post::class)->all();
 ```
 
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
 ## Testing
 
 ``` bash
 $ phpunit
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
