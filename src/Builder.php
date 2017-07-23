@@ -144,7 +144,7 @@ class Builder
                            ->where('item_type', get_class($model));
         }
 
-        if (!$model && $this->itemType) {
+        if (! $model && $this->itemType) {
             $query = $query->where('item_type', '=', $this->itemType);
         }
 
