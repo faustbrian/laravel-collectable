@@ -5,7 +5,7 @@
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ``` bash
-$ composer require faustbrian/laravel-collectable
+$ composer require faustbrian/laravel-collectable:dev-master
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:
