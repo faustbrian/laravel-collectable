@@ -15,6 +15,7 @@ namespace BrianFaust\Collectable\Traits;
 
 use BrianFaust\Collectable\Models\Collection;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use BrianFaust\Collectable\Builder;
 
 trait HasCollections
 {
