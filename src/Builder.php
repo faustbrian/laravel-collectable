@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace BrianFaust\Collectable;
 
-use Illuminate\Database\Eloquent\Model;
 use BrianFaust\Collectable\Models\Collection;
+use Illuminate\Database\Eloquent\Model;
 
 class Builder
 {
@@ -147,7 +147,7 @@ class Builder
                            ->where('item_type', get_class($model));
         }
 
-        if (! $model && $this->itemType) {
+        if (!$model && $this->itemType) {
             $query = $query->where('item_type', '=', $this->itemType);
         }
 
