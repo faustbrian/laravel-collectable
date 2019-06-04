@@ -1,22 +1,22 @@
 # Laravel Collectable
 
-[![Build Status](https://img.shields.io/travis/faustbrian/Laravel-Collectable/master.svg?style=flat-square)](https://travis-ci.org/faustbrian/Laravel-Collectable)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/faustbrian/laravel-collectable.svg?style=flat-square)]()
-[![Latest Version](https://img.shields.io/github/release/faustbrian/Laravel-Collectable.svg?style=flat-square)](https://github.com/faustbrian/Laravel-Collectable/releases)
-[![License](https://img.shields.io/packagist/l/faustbrian/Laravel-Collectable.svg?style=flat-square)](https://packagist.org/packages/faustbrian/Laravel-Collectable)
+[![Build Status](https://img.shields.io/travis/artisanry/Collectable/master.svg?style=flat-square)](https://travis-ci.org/artisanry/Collectable)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/artisanry/collectable.svg?style=flat-square)]()
+[![Latest Version](https://img.shields.io/github/release/artisanry/Collectable.svg?style=flat-square)](https://github.com/artisanry/Collectable/releases)
+[![License](https://img.shields.io/packagist/l/artisanry/Collectable.svg?style=flat-square)](https://packagist.org/packages/artisanry/Collectable)
 
 ## Installation
 
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ``` bash
-$ composer require faustbrian/laravel-collectable
+$ composer require artisanry/collectable
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:
 
 ```
-php artisan vendor:publish --provider="BrianFaust\Collectable\CollectableServiceProvider" && php artisan migrate
+php artisan vendor:publish --provider="Artisanry\Collectable\CollectableServiceProvider" && php artisan migrate
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ php artisan vendor:publish --provider="BrianFaust\Collectable\CollectableService
 
 namespace App;
 
-use BrianFaust\Collectable\Traits\HasCollections;
+use Artisanry\Collectable\Traits\HasCollections;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
@@ -93,7 +93,7 @@ $ phpunit
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to hello@brianfaust.me. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to hello@basecode.sh. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
@@ -102,4 +102,4 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## License
 
-[MIT](LICENSE) © [Brian Faust](https://brianfaust.me)
+[MIT](LICENSE) © [Brian Faust](https://basecode.sh)

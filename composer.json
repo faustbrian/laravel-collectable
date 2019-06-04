@@ -1,12 +1,12 @@
 {
-    "name": "faustbrian/laravel-collectable",
+    "name": "artisanry/collectable",
     "description": "Collectable Polymorphic Eloquent Models for Laravel 5",
-    "keywords": ["laravel", "framework", "Laravel-Collectable", "Laravel Collectable", "Brian Faust", "faustbrian"],
+    "keywords": ["laravel", "framework", "Laravel-Collectable", "Laravel Collectable"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
     }],
     "require": {
         "php": "^7.1",
@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\Collectable\\": "src/"
+            "Artisanry\\Collectable\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\Collectable\\": "tests"
+            "Artisanry\\Tests\\Collectable\\": "tests"
         }
     },
     "config": {
@@ -38,7 +38,7 @@
         },
         "laravel": {
             "providers": [
-                "BrianFaust\\Collectable\\CollectableServiceProvider"
+                "Artisanry\\Collectable\\CollectableServiceProvider"
             ]
         }
     },
